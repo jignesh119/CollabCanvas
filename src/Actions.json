@@ -1,0 +1,8 @@
+{
+  "JOIN": "join",
+  "DISCONNECTED": "disconnected",
+  "SKETCH_CHANGE": "sketch-change",
+  "SYNC_SKETCH": "sync-sketch",
+  "LEAVE": "leave",
+  "USER_JOINED": "user-joined"
+}

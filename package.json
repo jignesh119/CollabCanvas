@@ -10,12 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^4.21.2",
+    "http": "0.0.1-security",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-avatar": "^5.0.3",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^7.0.2",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
+    "@types/react-color": "^3.0.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",

@@ -1,9 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./components/Home";
+import CanvasPage from "./components/CanvasPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
-      <div>sample homepage</div>
+      <div>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            success: { iconTheme: { primary: "#4aed88", secondary: "blue" } },
+          }}
+        />
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/editor/:roomId" element={<CanvasPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
