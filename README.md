@@ -1,50 +1,85 @@
-# React + TypeScript + Vite
+# CollabCanvas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Its a collaborative drawing board to unleash your inner picasso. Its inspired from skribbl.io.
+Users in the same room can simultaneously draw and see updates from others in realtime.
 
-Currently, two official plugins are available:
+> its going to be a part of my another big project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## Expanding the ESLint configuration
+<img src="./public/demo1.png">
+<img src="./public/demo2.png">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Real-Time Collaboration**: multiple users can draw together on same canvas
+- **Room-Based Sessions**: create or join rooms with a unique room ID.
+- **Dynamic Drawing Tools**: supports various colors & tools like clear tool, copying roomId.
+- **TypeScript-Powered**: used strong typing for code reliability & linting.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech Stack
+
+- **Reactjs**: For building the ui.
+- **Typescript**: for type safety and better dev exp.
+- **Node.js**: for the backend server for real-time communication.
+- **WebSockets**: for two-way synchronization across users.
+- **Canvas API**: for clean, responsive drawing.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jignesh119/CollabCanvas.git
+   cd CollabCanvas
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the server:
+
+   ```bash
+   npm run start
+   ```
+
+4. Open your browser and navigate to `http://localhost:3001` to start collaborating!
+
+## Usage
+
+### Home Page (`/`)
+
+- Enter your name and a room ID to create or join a room
+
+### Canvas Page (`/canvas/[roomId]`)
+
+- The shared drawing space where participants can:
+  - Draw and see updates
+  - Invite others by sharing the room ID.
+
+## Project Structure
+
+```bash
+src/
+├── components/
+│   ├── canvas.tsx         # Canvas logic
+│   ├── canvasPage.tsx     # Main page for drawing board
+│   ├── client.tsx
+│   ├── home.tsx
+├── hooks/
+│   └── useDraw.ts         # hook for drawing on canvas
+├── utils/
+│   └── drawLine.ts        # Utility to handle line drawing logic
+├── types/
+│   └── typing.d.ts
+├── io.ts                  # WebSocket connection setup
+├── App.tsx
+server.js                  # Node.js server logic for WebSocket
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Contributions are always welcome! Feel free to fork the repository, create a new branch, and submit a pull request with your enhancements or fixes.
